@@ -1,39 +1,47 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Crush Compatibility 💘</title>
+  <title>Compatibility Checker</title>
 </head>
-<body style="text-align:center; font-family:Arial; margin-top:60px; background-color:#ffe6f2;">
 
-  <h1>💘 Crush Compatibility Checker 💘</h1>
+<body style="text-align:center; font-family:Arial; margin-top:80px;">
 
-  <input type="text" id="person1" placeholder="Your Name"><br><br>
-  <input type="text" id="crush1" placeholder="Your Crush's Name"><br><br>
+  <h1>💘 Compatibility Checker 💘</h1>
 
-  <input type="text" id="person2" placeholder="Their Name"><br><br>
-  <input type="text" id="crush2" placeholder="Their Crush's Name"><br><br>
+  <input type="text" id="name1" placeholder="First Name"><br><br>
+  <input type="text" id="name2" placeholder="Second Name"><br><br>
 
-  <button onclick="checkLove()" style="padding:10px 20px;">Check Compatibility 💕</button>
+  <button onclick="checkCompatibility()" 
+          style="padding:10px 20px; font-size:16px;">
+    Check Compatibility
+  </button>
 
   <p id="result" style="margin-top:20px; font-size:20px;"></p>
 
   <script>
-    function checkLove() {
-      let person1 = document.getElementById("person1").value.toLowerCase();
-      let crush1 = document.getElementById("crush1").value.toLowerCase();
-      let person2 = document.getElementById("person2").value.toLowerCase();
-      let crush2 = document.getElementById("crush2").value.toLowerCase();
+    function checkCompatibility() {
+      let name1 = document.getElementById("name1").value.trim().toLowerCase();
+      let name2 = document.getElementById("name2").value.trim().toLowerCase();
 
-      if (crush1 === person2 && crush2 === person1) {
+      if (name1 === "" || name2 === "") {
         document.getElementById("result").innerText =
-          "OMG 😍 It's a perfect match! You both like each other 💘✨";
-      } else if (crush1 === person2 || crush2 === person1) {
-        document.getElementById("result").innerText =
-          "Ooo 👀 One-sided crush detected 😌💕";
-      } else {
-        document.getElementById("result").innerText =
-          "Hmm… No love connection found 😅";
+        "Please enter both names.";
+        return;
       }
+
+      let yourName = "yournamehere";  // <-- CHANGE THIS
+
+      let percentage;
+
+      if (name1 === yourName || name2 === yourName) {
+        percentage = 100;
+      } else {
+        percentage = Math.floor(Math.random() * 101);
+      }
+
+      document.getElementById("result").innerText =
+        name1 + " ❤️ " + name2 + " = " + percentage + "% Compatibility";
     }
   </script>
 
