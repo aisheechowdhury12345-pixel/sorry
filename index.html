@@ -1,83 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Sorry 🙂</title>
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #2b5876, #4e4376);
-            color: white;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 80px;
-            margin: 0;
-        }
-
-        p {
-            font-size: 20px;
-            max-width: 650px;
-            margin-top: 20px;
-            line-height: 1.6;
-        }
-
-        button {
-            margin-top: 30px;
-            padding: 10px 25px;
-            border: none;
-            border-radius: 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        #extra {
-            display: none;
-            margin-top: 25px;
-            font-size: 18px;
-            line-height: 1.8;
-            max-width: 650px;
-        }
-    </style>
+  <title>Crush Compatibility 💘</title>
 </head>
-<body>
+<body style="text-align:center; font-family:Arial; margin-top:60px; background-color:#ffe6f2;">
 
-<h1>Sorry 🙂</h1>
+  <h1>💘 Crush Compatibility Checker 💘</h1>
 
-<p>
-I didn’t mean to upset you. That wasn’t my intention at all.
-</p>
+  <input type="text" id="person1" placeholder="Your Name"><br><br>
+  <input type="text" id="crush1" placeholder="Your Crush's Name"><br><br>
 
-<button onclick="showMessage()">Click here 👀</button>
+  <input type="text" id="person2" placeholder="Their Name"><br><br>
+  <input type="text" id="crush2" placeholder="Their Crush's Name"><br><br>
 
-<div id="extra">
-    Since you clicked… I’ll be honest 😌<br><br>
+  <button onclick="checkLove()" style="padding:10px 20px;">Check Compatibility 💕</button>
 
-    • You being mad at me is lowkey illegal.<br>
-    • Your smile should come with a warning label.<br>
-    • I swear I don’t get distracted easily… except when you’re around.<br>
-    • Talking to you is my favorite habit.<br>
-    • If I annoyed you, it’s probably because I like your attention a little too much 😉<br><br>
+  <p id="result" style="margin-top:20px; font-size:20px;"></p>
 
-    But seriously… I respect you. And I hope we’re good.
-</div>
+  <script>
+    function checkLove() {
+      let person1 = document.getElementById("person1").value.toLowerCase();
+      let crush1 = document.getElementById("crush1").value.toLowerCase();
+      let person2 = document.getElementById("person2").value.toLowerCase();
+      let crush2 = document.getElementById("crush2").value.toLowerCase();
 
-<audio autoplay loop>
-  <source src="https://assets.mixkit.co/music/preview/mixkit-soft-romantic-piano-123.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-function showMessage() {
-    document.getElementById("extra").style.display = "block";
-}
-</script>
+      if (crush1 === person2 && crush2 === person1) {
+        document.getElementById("result").innerText =
+          "OMG 😍 It's a perfect match! You both like each other 💘✨";
+      } else if (crush1 === person2 || crush2 === person1) {
+        document.getElementById("result").innerText =
+          "Ooo 👀 One-sided crush detected 😌💕";
+      } else {
+        document.getElementById("result").innerText =
+          "Hmm… No love connection found 😅";
+      }
+    }
+  </script>
 
 </body>
 </html>
