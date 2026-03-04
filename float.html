@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sorry 🙂</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #2b5876, #4e4376, #d76d77);
+            background-size: 400% 400%;
+            animation: gradientMove 12s ease infinite;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            color: white;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1 {
+            font-size: 85px;
+            margin: 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .message {
+            font-size: 20px;
+            margin-top: 20px;
+            max-width: 700px;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeIn 3s forwards;
+            animation-delay: 1s;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        button {
+            margin-top: 35px;
+            padding: 12px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 25px;
+            background: white;
+            color: #4e4376;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.08);
+        }
+
+        #flirt {
+            display: none;
+            margin-top: 25px;
+            font-size: 18px;
+            line-height: 1.8;
+            max-width: 700px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Sorry 🙂</h1>
+
+<div class="message">
+I didn’t mean to upset you. That honestly wasn’t my intention.<br><br>
+Sometimes I forget how distracting you are 😌
+</div>
+
+<button onclick="showFlirt()">Click at your own risk 👀</button>
+
+<div id="flirt">
+Okay fine… since you clicked:<br><br>
+
+• You look way too good to stay mad for long.<br>
+• I blame your smile for everything 😌<br>
+• Talking to you is lowkey my favorite part of the day.<br>
+• If being charming was a crime… you’d be serving life.<br>
+• I wasn’t trying to annoy you… I was trying to get your attention 😉<br><br>
+
+But seriously — I respect you. And I hope we’re good.
+</div>
+
+<audio autoplay loop>
+  <source src="https://assets.mixkit.co/music/preview/mixkit-soft-romantic-piano-123.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function showFlirt() {
+    document.getElementById("flirt").style.display = "block";
+}
+</script>
+
+</body>
+</html>
