@@ -1,30 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sorry ❤️</title>
+    <meta charset="UTF-8">
+    <title>Sorry 🙂</title>
     <style>
         body {
-            background: linear-gradient(to right, #ffcccc, #ffe6e6);
+            margin: 0;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            flex-direction: column;
             font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #2b5876, #4e4376);
+            color: white;
+            text-align: center;
         }
+
         h1 {
-            font-size: 100px;
-            color: red;
-            animation: beat 1s infinite;
+            font-size: 80px;
+            margin: 0;
         }
-        @keyframes beat {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
+
+        p {
+            font-size: 20px;
+            max-width: 650px;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        button {
+            margin-top: 30px;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #extra {
+            display: none;
+            margin-top: 25px;
+            font-size: 18px;
+            line-height: 1.8;
+            max-width: 650px;
         }
     </style>
 </head>
 <body>
-    <h1>SORRY ❤️</h1>
+
+<h1>Sorry 🙂</h1>
+
+<p>
+I didn’t mean to upset you. That wasn’t my intention at all.
+</p>
+
+<button onclick="showMessage()">Click here 👀</button>
+
+<div id="extra">
+    Since you clicked… I’ll be honest 😌<br><br>
+
+    • You being mad at me is lowkey illegal.<br>
+    • Your smile should come with a warning label.<br>
+    • I swear I don’t get distracted easily… except when you’re around.<br>
+    • Talking to you is my favorite habit.<br>
+    • If I annoyed you, it’s probably because I like your attention a little too much 😉<br><br>
+
+    But seriously… I respect you. And I hope we’re good.
+</div>
+
+<audio autoplay loop>
+  <source src="https://assets.mixkit.co/music/preview/mixkit-soft-romantic-piano-123.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function showMessage() {
+    document.getElementById("extra").style.display = "block";
+}
+</script>
+
 </body>
 </html>
